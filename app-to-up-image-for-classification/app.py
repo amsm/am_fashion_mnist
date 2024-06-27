@@ -1,8 +1,8 @@
 """
-The simplest Flask app to receive an image upload and respond its classification
-the classification is according to a pre-trained model at folder "fashion_mnist_model_after_fit"
+A Flask app to receive an image upload and respond its classification
+the classification is according to a pre-trained model at file "fashion_mnist_model_after_fit.h5"
 
-You can create pre-trained models with the companion code "fashion_mnist_1.py"
+You can create and save models with the companion code "fashion_mnist_1.py"
 
 The model is trained on the Fashion-MNIST dataset and no effort has been done to extend it to higher quality pics
 So, results will probably be HORRIBLE with everyday real pictures, and good with 28x28 images from Fashio-MNIST itself
@@ -17,7 +17,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the previously saved model
-model = tf.keras.models.load_model('fashion_mnist_model_after_fit')
+model = tf.keras.models.load_model('../fashion_mnist_model_after_fit.h5')
 
 # Define class names
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
